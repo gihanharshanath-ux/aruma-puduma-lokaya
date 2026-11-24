@@ -8,7 +8,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;600;800&family=Noto+Serif+Sinhala:wght@700&display=swap" rel="stylesheet">
 <style>
-/* CSS එක - මුල් පිටුවේ තියෙන එකම CSS එක */
 :root{
   --bg:#0f0b1f; --bg-soft:#171230; --card:#1e1840;
   --ink:#f2eefb; --muted:#a99fc6;
@@ -16,73 +15,166 @@
   --line:rgba(255,255,255,0.08); --radius:18px;
 }
 *{box-sizing:border-box; margin:0; padding:0}
-body{font-family:'Noto Sans Sinhala', system-ui, sans-serif; background:var(--bg); color:var(--ink); line-height:1.7; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Noto Sans Sinhala', system-ui, sans-serif;
+  background:var(--bg); color:var(--ink); line-height:1.7;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
 a{color:inherit; text-decoration:none}
 img{max-width:100%; display:block}
-.site-header{position:sticky; top:0; z-index:50; background:rgba(15,11,31,0.85); backdrop-filter:blur(12px); border-bottom:1px solid var(--line);}
-.nav{max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:14px 20px; gap:20px;}
-.logo{font-family:'Noto Serif Sinhala', serif; font-weight:700; font-size:1.35rem; display:flex; align-items:center; gap:10px;}
-.logo .dot{width:12px; height:12px; border-radius:50%; background:var(--accent); box-shadow:0 0 12px var(--accent)}
-.nav-links{display:flex; gap:26px; font-size:.95rem}
+
+/* HEADER */
+.site-header{
+  position:sticky; top:0; z-index:50;
+  background:rgba(15,11,31,0.85);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  max-width:1200px; margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 20px; gap:20px;
+}
+.logo{
+  font-family:'Noto Serif Sinhala', serif; font-weight:700; font-size:1.35rem;
+  display:flex; align-items:center; gap:10px; letter-spacing:.5px;
+}
+.logo .dot{width:12px; height:12px; border-radius:50%; background:var(--accent); box-shadow:0 0 12px var(--accent);}
+.nav-links{display:flex; gap:26px; font-size:.95rem;}
 .nav-links a{color:var(--muted); transition:color .2s}
 .nav-links a:hover{color:var(--accent)}
 .menu-btn{display:none; background:none; border:none; color:var(--ink); font-size:1.6rem; cursor:pointer}
 
-.page-header{max-width:1200px; margin:0 auto; padding:60px 20px 30px; text-align:center;}
-.page-header h1{font-family:'Noto Serif Sinhala', serif; font-size:clamp(2rem,4vw,3rem); color:var(--accent); margin-bottom:10px;}
+/* PAGE TITLE */
+.page-header{
+  max-width:1200px; margin:0 auto; padding:60px 20px 40px; text-align:center;
+}
+.page-header h1{
+  font-family:'Noto Serif Sinhala', serif; font-size:clamp(2rem,4vw,3rem);
+  color:var(--accent); margin-bottom:12px;
+}
 .page-header p{color:var(--muted); font-size:1.1rem;}
 
-.section{max-width:1200px; margin:0 auto; padding:20px 20px 60px;}
+/* ARTICLE GRID */
+.section{max-width:1200px; margin:0 auto; padding:0 20px 60px;}
 .grid{display:grid; gap:24px;}
 .grid-3{grid-template-columns:repeat(3,1fr);}
-.card{background:var(--card); border-radius:var(--radius); overflow:hidden; border:1px solid var(--line); transition:transform .25s,border-color .25s; display:flex; flex-direction:column;}
+.card{
+  background:var(--card); border-radius:var(--radius); overflow:hidden; border:1px solid var(--line);
+  transition:transform .25s, border-color .25s; display:flex; flex-direction:column;
+}
 .card:hover{transform:translateY(-6px); border-color:rgba(245,182,66,.4)}
-.card-thumb{aspect-ratio:16/10; position:relative; overflow:hidden; background:linear-gradient(135deg,#2d1b69,#6d28d9); display:flex; align-items:center; justify-content:center; font-size:3rem;}
+.card-thumb{
+  aspect-ratio:16/10; position:relative;
+  display:flex; align-items:center; justify-content:center; font-size:3rem; overflow:hidden;
+}
 .card-thumb.c1{background:linear-gradient(135deg,#6d28d9,#db2777)} .card-thumb.c2{background:linear-gradient(135deg,#0891b2,#4338ca)}
 .card-thumb.c3{background:linear-gradient(135deg,#c2410c,#7c2d12)} .card-thumb.c4{background:linear-gradient(135deg,#047857,#065f46)}
 .card-thumb.c5{background:linear-gradient(135deg,#7e22ce,#4c1d95)} .card-thumb.c6{background:linear-gradient(135deg,#be123c,#881337)}
 .card-thumb.c7{background:linear-gradient(135deg,#b45309,#78350f)} .card-thumb.c8{background:linear-gradient(135deg,#0f766e,#115e59)}
 .card-thumb.c9{background:linear-gradient(135deg,#1d4ed8,#1e3a8a)} .card-thumb.c10{background:linear-gradient(135deg,#be185d,#831843)}
-.card-tag{position:absolute; top:12px; left:12px; background:rgba(15,11,31,.75); backdrop-filter:blur(6px); padding:4px 12px; border-radius:999px; font-size:.75rem; font-weight:600; color:var(--accent);}
+.card-thumb.c11{background:linear-gradient(135deg,#4338ca,#3730a3)} .card-thumb.c12{background:linear-gradient(135deg,#15803d,#166534)}
+
+.card-tag{
+  position:absolute; top:12px; left:12px; background:rgba(15,11,31,.75); backdrop-filter:blur(6px);
+  padding:4px 12px; border-radius:999px; font-size:.75rem; font-weight:600; color:var(--accent);
+}
+.card-share{
+  position:absolute; top:12px; right:12px; width:34px; height:34px; border-radius:50%;
+  background:rgba(15,11,31,.85); backdrop-filter:blur(6px); border:1px solid var(--line);
+  color:var(--ink); cursor:pointer; font-size:1rem; display:flex; align-items:center; justify-content:center; transition:.2s;
+}
+.card-share:hover{background:var(--accent); color:#1a1030; border-color:var(--accent)}
 .card-body{padding:20px; display:flex; flex-direction:column; gap:10px; flex:1}
-.card-body h3{font-size:1.12rem; font-weight:700; line-height:1.45}
+.card-body h3{font-size:1.12rem; font-weight:700; line-height:1.45;}
 .card-body h3 a:hover{color:var(--accent)}
 .card-excerpt{color:var(--muted); font-size:.9rem; flex:1}
 .card-meta{display:flex; gap:12px; font-size:.8rem; color:var(--muted); margin-top:6px}
 
-.site-footer{border-top:1px solid var(--line); margin-top:40px; padding:40px 20px 30px; text-align:center;}
-.site-footer .logo{justify-content:center; margin-bottom:12px;}
-.site-footer p{color:var(--muted); font-size:.9rem;}
-.copyright{margin-top:20px; font-size:.8rem; color:var(--muted);}
+/* FOOTER */
+.site-footer{border-top:1px solid var(--line); margin-top:20px; padding:50px 20px 30px;}
+.footer-inner{max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:40px;}
+.footer-inner h4{font-size:.95rem; margin-bottom:16px; color:var(--accent)}
+.footer-inner a{color:var(--muted); font-size:.9rem; display:block; margin-bottom:10px}
+.footer-inner a:hover{color:var(--ink)}
+.footer-brand p{color:var(--muted); font-size:.9rem; margin-top:12px; max-width:280px}
+.socials{display:flex; gap:12px; margin-top:18px}
+.socials a{width:38px; height:38px; border-radius:50%; background:var(--bg-soft); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; transition:.2s; margin:0;}
+.socials a:hover{border-color:var(--accent); color:var(--accent)}
+.copyright{max-width:1200px; margin:40px auto 0; padding-top:24px; border-top:1px solid var(--line); text-align:center; color:var(--muted); font-size:.85rem;}
 
-@media (max-width:960px){ .grid-3{grid-template-columns:repeat(2,1fr)} }
-@media (max-width:640px){ .nav-links{display:none;} .menu-btn{display:block;} .grid-3{grid-template-columns:1fr;} }
+/* RESPONSIVE */
+@media (max-width:960px){
+  .grid-3{grid-template-columns:repeat(2,1fr)}
+  .footer-inner{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .nav-links{display:none; position:absolute; top:100%; left:0; right:0; background:var(--bg-soft); flex-direction:column; padding:20px; gap:16px; border-bottom:1px solid var(--line);}
+  .menu-btn{display:block}
+  .grid-3{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr; text-align:center}
+  .footer-brand p{margin-inline:auto}
+  .socials{justify-content:center}
+}
 </style>
 </head>
 <body>
 
+<!-- HEADER -->
 <header class="site-header">
   <nav class="nav">
     <a href="index.html" class="logo"><span class="dot"></span> අරුම පුදුම ලෝකය</a>
-    <div class="nav-links">
+    <div class="nav-links" id="navLinks">
       <a href="index.html">මුල් පිටුව</a>
       <a href="all-articles.html">සියලුම ලිපි</a>
     </div>
-    <button class="menu-btn">☰</button>
+    <button class="menu-btn" id="menuBtn" aria-label="menu">☰</button>
   </nav>
 </header>
 
+<!-- PAGE TITLE -->
 <section class="page-header">
   <h1>සියලුම ලිපි</h1>
   <p>අප විසින් ලියන ලද සියලුම අරුම පුදුම ලිපි මෙතනින් කියවන්න.</p>
 </section>
 
+<!-- ARTICLES GRID -->
 <section class="section">
   <div class="grid grid-3">
 
-    <!-- ලිපිය 1 -->
+    <!-- 1 -->
     <article class="card">
-      <div class="card-thumb c1"><span class="card-tag">මනස</span>🌙</div>
+      <div class="card-thumb c1">
+        <span class="card-tag">විද්‍යාව</span>🐈
+        <button class="card-share" data-card-share>↗</button>
+      </div>
+      <div class="card-body">
+        <h3><a href="schrodinger.html">ෂ්‍රෝඩින්ගර්ගේ බළලා: මැරිලත් ජීවතුන් අතරත්?</a></h3>
+        <p class="card-excerpt">පෙට්ටියක් ඇතුළේ ඉන්න බළලෙක් එකවර මැරිලත් ජීවතුන් අතරත් ඉන්න පුළුවන්ද?</p>
+        <div class="card-meta"><span>අරුම පුදුම ලෝකය</span><span class="dot">•</span><span>7 min</span></div>
+      </div>
+    </article>
+
+    <!-- 2 -->
+    <article class="card">
+      <div class="card-thumb c2">
+        <span class="card-tag">දර්ශනය</span>💻
+        <button class="card-share" data-card-share>↗</button>
+      </div>
+      <div class="card-body">
+        <h3><a href="simulation.html">සිමියුලේෂන්: අපි ජීවත් වෙන්නේ පරිගණක ක්‍රීඩාවකද?</a></h3>
+        <p class="card-excerpt">අපි ජීවත් වෙන්නේ ඇත්තටම සැබෑ ලෝකයේද? නැත්නම් අපි කවුරුහරි හදපු ක්‍රීඩාවක චරිතද?</p>
+        <div class="card-meta"><span>අරුම පුදුම ලෝකය</span><span class="dot">•</span><span>8 min</span></div>
+      </div>
+    </article>
+
+    <!-- 3 -->
+    <article class="card">
+      <div class="card-thumb c3">
+        <span class="card-tag">මනස</span>🌙
+        <button class="card-share" data-card-share>↗</button>
+      </div>
       <div class="card-body">
         <h3><a href="lucid.html">පැහැදිලි සිහින (Lucid Dreaming): ඔබේ සිහිනය තුළ ඔබ රජුයි!</a></h3>
         <p class="card-excerpt">සිහිනයක් දකින අතරතුර, තමන් සිහිනයක් දකින බව දැනගෙන එය පාලනය කරන්න පුළුවන්ද?</p>
@@ -90,9 +182,12 @@ img{max-width:100%; display:block}
       </div>
     </article>
 
-    <!-- ලිපිය 2 -->
+    <!-- 4 -->
     <article class="card">
-      <div class="card-thumb c2"><span class="card-tag">අසාමාන්‍ය</span>🎨</div>
+      <div class="card-thumb c4">
+        <span class="card-tag">අසාමාන්‍ය</span>🎨
+        <button class="card-share" data-card-share>↗</button>
+      </div>
       <div class="card-body">
         <h3><a href="tetrachromacy.html">ටෙට්‍රාක්‍රොමැසි: සාමාන්‍ය මිනිස්සුන්ට නොපෙනෙන වර්ණ දකින අය</a></h3>
         <p class="card-excerpt">සාමාන්‍ය මිනිස්සුන්ට වඩා වර්ණ 100 ගුණයක් දකින්න පුළුවන් ඇස් තියෙන අය ගැන.</p>
@@ -100,9 +195,12 @@ img{max-width:100%; display:block}
       </div>
     </article>
 
-    <!-- ලිපිය 3 -->
+    <!-- 5 -->
     <article class="card">
-      <div class="card-thumb c3"><span class="card-tag">මනස</span>🧠</div>
+      <div class="card-thumb c5">
+        <span class="card-tag">මනස</span>🧠
+        <button class="card-share" data-card-share>↗</button>
+      </div>
       <div class="card-body">
         <h3><a href="hyperthymesia.html">හයිපර්තයිමීසියා: අතීතයේ හැම දවසක්ම මතක තියාගන්නා අය</a></h3>
         <p class="card-excerpt">ජීවිතයේ හැම දවසක්ම අකුරට පිට අකුර මතක තියාගන්න පුළුවන් නම්?</p>
@@ -110,9 +208,12 @@ img{max-width:100%; display:block}
       </div>
     </article>
 
-    <!-- ලිපිය 4 -->
+    <!-- 6 -->
     <article class="card">
-      <div class="card-thumb c4"><span class="card-tag">විද්‍යාව</span>🌀</div>
+      <div class="card-thumb c6">
+        <span class="card-tag">විද්‍යාව</span>🌀
+        <button class="card-share" data-card-share>↗</button>
+      </div>
       <div class="card-body">
         <h3><a href="quantum.html">Quantum Entanglement: එකවර ස්ථාන දෙකක තියෙන්නේ කොහොමද?</a></h3>
         <p class="card-excerpt">අංශු දෙකක් එකිනෙකට ඈතින් තිබුණත්, එකක් වෙනස් කළොත් අනිත් එකට බලපානවා. ඒ ඇයි?</p>
@@ -120,9 +221,12 @@ img{max-width:100%; display:block}
       </div>
     </article>
 
-    <!-- ලිපිය 5 -->
+    <!-- 7 -->
     <article class="card">
-      <div class="card-thumb c5"><span class="card-tag">මනස</span>🌀</div>
+      <div class="card-thumb c7">
+        <span class="card-tag">මනස</span>🌀
+        <button class="card-share" data-card-share>↗</button>
+      </div>
       <div class="card-body">
         <h3><a href="dejavu.html">Déjà vu: "මේක කලින් දැකලා" කියලා හිතෙන්නේ ඇයි?</a></h3>
         <p class="card-excerpt">ඔබට කවදා හරි තැනකට ආවාම "මෙතනට ඇවිත් ඉන්නවා වගේ" දැනුණාද? ඒ මොකක්ද?</p>
@@ -130,9 +234,12 @@ img{max-width:100%; display:block}
       </div>
     </article>
 
-    <!-- ලිපිය 6 -->
+    <!-- 8 -->
     <article class="card">
-      <div class="card-thumb c6"><span class="card-tag">දර්ශනය</span>🤔</div>
+      <div class="card-thumb c8">
+        <span class="card-tag">දර්ශනය</span>🤔
+        <button class="card-share" data-card-share>↗</button>
+      </div>
       <div class="card-body">
         <h3><a href="mandela.html">Mandela Effect: ඇයි හැමෝම එකම වැරදි මතකය තියාගන්නේ?</a></h3>
         <p class="card-excerpt">මිලියන ගණන් මිනිස්සුන්ට එකම වැරදි මතකයක් තියෙනවා නම්, ඒක මොළයේ ගැටළුවක්ද?</p>
@@ -140,9 +247,12 @@ img{max-width:100%; display:block}
       </div>
     </article>
 
-    <!-- ලිපිය 7 -->
+    <!-- 9 -->
     <article class="card">
-      <div class="card-thumb c7"><span class="card-tag">අසාමාන්‍ය</span>🎨</div>
+      <div class="card-thumb c9">
+        <span class="card-tag">අසාමාන්‍ය</span>🎨
+        <button class="card-share" data-card-share>↗</button>
+      </div>
       <div class="card-body">
         <h3><a href="synesthesia.html">Synesthesia: ශබ්ද වර්ණ විදිහට දකින මිනිස්සු</a></h3>
         <p class="card-excerpt">සමහරුන්ට අකුරු දකිනකොට වර්ණ පේනවා. මේක මොළයේ විශේෂ ලක්ෂණයක්.</p>
@@ -150,9 +260,12 @@ img{max-width:100%; display:block}
       </div>
     </article>
 
-    <!-- ලිපිය 8 -->
+    <!-- 10 -->
     <article class="card">
-      <div class="card-thumb c8"><span class="card-tag">අවකාශය</span>🌌</div>
+      <div class="card-thumb c10">
+        <span class="card-tag">අවකාශය</span>🌌
+        <button class="card-share" data-card-share>↗</button>
+      </div>
       <div class="card-body">
         <h3><a href="time.html">කාලය නැවැත්තුවොත් මොකද වෙන්නේ?</a></h3>
         <p class="card-excerpt">අවකාශ-කාලය යනු එකම දෙයක්. ඒක පැහැදිලි කරගන්න පුළුවන් ආකාරයක් තියෙනවා.</p>
@@ -160,9 +273,12 @@ img{max-width:100%; display:block}
       </div>
     </article>
 
-    <!-- ලිපිය 9 -->
+    <!-- 11 -->
     <article class="card">
-      <div class="card-thumb c9"><span class="card-tag">ඉතිහාසය</span>📜</div>
+      <div class="card-thumb c11">
+        <span class="card-tag">ඉතිහාසය</span>📜
+        <button class="card-share" data-card-share>↗</button>
+      </div>
       <div class="card-body">
         <h3><a href="savant.html">Savant Syndrome: සාමාන්‍ය මිනිස්සුන්ට කරන්න බැරි දේ කරන අය</a></h3>
         <p class="card-excerpt">පින්තූරයක් දැක්ක ගමන් සම්පූර්ණ නගරයක් මතක තියාගන්න පුළුවන් කොහොමද?</p>
@@ -170,9 +286,12 @@ img{max-width:100%; display:block}
       </div>
     </article>
 
-    <!-- ලිපිය 10 -->
+    <!-- 12 -->
     <article class="card">
-      <div class="card-thumb c10"><span class="card-tag">ගණිතය</span>♾️</div>
+      <div class="card-thumb c12">
+        <span class="card-tag">ගණිතය</span>♾️
+        <button class="card-share" data-card-share>↗</button>
+      </div>
       <div class="card-body">
         <h3><a href="infinity.html">අනන්තය (Infinity) — ගණිතයේ විශ්මය</a></h3>
         <p class="card-excerpt">අනන්තය කියන්නේ අංකයක්ද? ගණිතඥයින් 2000 වසරක් තිස්සේ මේ ගැන විවාද කරනවා.</p>
@@ -183,17 +302,64 @@ img{max-width:100%; display:block}
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="site-footer">
-  <a href="index.html" class="logo"><span class="dot"></span> අරුම පුදුම ලෝකය</a>
-  <p>ලෝකයේ හිතාගන්න බැරි දේවල් ගැන සරල සිංහලෙන්.</p>
-  <div class="copyright">© 2026 අරුම පුදුම ලෝකය. සියලුම හිමිකම් ඇවිරිණි.</div>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo"><span class="dot"></span> අරුම පුදුම ලෝකය</a>
+      <p>ලෝකයේ හිතාගන්න බැරි දේවල් ගැන සරල සිංහලෙන් ලියන අන්තර්ජාල සඟරාවක්. ශ්‍රී ලංකාවේ පාඨකයන් සඳහා.</p>
+      <div class="socials">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="YouTube">▶</a>
+        <a href="#" aria-label="Instagram">◉</a>
+        <a href="#" aria-label="Email">✉</a>
+      </div>
+    </div>
+    <div>
+      <h4>මාතෘකා</h4>
+      <a href="#">විද්‍යාව</a>
+      <a href="#">මනස</a>
+      <a href="#">අවකාශය</a>
+      <a href="#">දර්ශනය</a>
+    </div>
+    <div>
+      <h4>අප ගැන</h4>
+      <a href="index.html">මුල් පිටුව</a>
+      <a href="all-articles.html">සියලුම ලිපි</a>
+    </div>
+    <div id="contact">
+      <h4>සම්බන්ධතා</h4>
+      <a href="mailto:hello@amarulokaya.lk">hello@amarulokaya.lk</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+  <div class="copyright">
+    © 2026 අරුම පුදුම ලෝකය. සියලුම හිමිකම් ඇවිරිණි. | Made with 💜 in Sri Lanka
+  </div>
 </footer>
 
 <script>
-  document.querySelector('.menu-btn').addEventListener('click', ()=>{
-    const links = document.querySelector('.nav-links');
-    if(links.style.display === 'flex'){ links.style.display = 'none'; } 
-    else { links.style.display = 'flex'; links.style.position = 'absolute'; links.style.top = '100%'; links.style.left = '0'; links.style.right = '0'; links.style.background = 'var(--bg)'; links.style.flexDirection = 'column'; links.style.padding = '20px'; links.style.gap = '16px'; links.style.borderBottom = '1px solid var(--line)'; }
+  // Mobile menu toggle
+  document.getElementById('menuBtn').addEventListener('click', ()=>{
+    const links = document.getElementById('navLinks');
+    if(links.style.display === 'flex'){
+      links.style.display = 'none';
+    } else {
+      links.style.display = 'flex';
+    }
+  });
+
+  // Card Share logic (WhatsApp)
+  document.querySelectorAll('[data-card-share]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault(); e.stopPropagation();
+      const card = btn.closest('.card');
+      if(!card) return;
+      const title = card.querySelector('h3').innerText;
+      const url = card.querySelector('h3 a').href;
+      window.open(`https://wa.me/?text=${encodeURIComponent(title)}%0A%0A${encodeURIComponent(url)}`, '_blank', 'width=600,height=600');
+    });
   });
 </script>
 </body>
