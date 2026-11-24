@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>අරුම පුදුම ලෝකය — හිතාගන්න බැරි දේවල් ගැන</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;600;800&family=Noto+Serif+Sinhala:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0f0b1f;
+  --bg-soft:#171230;
+  --card:#1e1840;
+  --ink:#f2eefb;
+  --muted:#a99fc6;
+  --accent:#f5b642;
+  --accent-2:#8b5cf6;
+  --line:rgba(255,255,255,0.08);
+  --radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Noto Sans Sinhala',system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* ---------- HEADER ---------- */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(15,11,31,0.85);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  max-width:1200px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 20px;gap:20px;
+}
+.logo{
+  font-family:'Noto Serif Sinhala',serif;
+  font-weight:700;font-size:1.35rem;
+  display:flex;align-items:center;gap:10px;
+  letter-spacing:.5px;
+}
+.logo .dot{
+  width:12px;height:12px;border-radius:50%;
+  background:var(--accent);
+  box-shadow:0 0 12px var(--accent);
+}
+.nav-links{
+  display:flex;gap:26px;font-size:.95rem;
+}
+.nav-links a{color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--accent)}
+.lang-btn{
+  border:1px solid var(--line);border-radius:999px;
+  padding:6px 14px;font-size:.85rem;color:var(--muted);
+  background:transparent;cursor:pointer;font-family:inherit;
+}
+.lang-btn:hover{border-color:var(--accent);color:var(--accent)}
+.menu-btn{display:none;background:none;border:none;color:var(--ink);font-size:1.6rem;cursor:pointer}
+
+/* ---------- HERO ---------- */
+.hero{
+  max-width:1200px;margin:0 auto;
+  padding:70px 20px 60px;
+  display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;
+}
+.hero h1{
+  font-family:'Noto Serif Sinhala',serif;
+  font-size:clamp(2rem,4.5vw,3.4rem);
+  line-height:1.25;font-weight:700;
+  margin-bottom:20px;
+}
+.hero h1 span{
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p{color:var(--muted);font-size:1.08rem;margin-bottom:28px;max-width:520px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+  display:inline-block;padding:13px 26px;border-radius:999px;
+  font-weight:600;font-size:.95rem;transition:transform .2s,box-shadow .2s;
+}
+.btn-primary{
+  background:linear-gradient(90deg,var(--accent),#ff8a3d);
+  color:#1a1030;
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(245,182,66,.3)}
+.btn-ghost{border:1px solid var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.hero-visual{
+  position:relative;height:340px;
+  display:flex;align-items:center;justify-content:center;
+}
+.orbit{
+  position:absolute;border:1px dashed rgba(139,92,246,.35);
+  border-radius:50%;
+}
+.orbit-1{width:280px;height:280px;animation:spin 30s linear infinite}
+.orbit-2{width:200px;height:200px;animation:spin 20s linear infinite reverse}
+.planet{
+  width:120px;height:120px;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,#a78bfa,#4c1d95);
+  box-shadow:0 0 60px rgba(139,92,246,.5);
+  position:relative;z-index:2;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ---------- SECTION HEADINGS ---------- */
+.section{max-width:1200px;margin:0 auto;padding:50px 20px}
+.section-head{
+  display:flex;justify-content:space-between;align-items:end;
+  margin-bottom:32px;flex-wrap:wrap;gap:12px;
+}
+.section-head h2{
+  font-family:'Noto Serif Sinhala',serif;
+  font-size:clamp(1.5rem,2.5vw,2rem);font-weight:700;
+}
+.section-head .sub{color:var(--muted);font-size:.95rem;margin-top:4px}
+.view-all{color:var(--accent);font-size:.9rem;font-weight:600}
+
+/* ---------- ARTICLE GRID ---------- */
+.grid{display:grid;gap:24px}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+.card{
+  background:var(--card);border-radius:var(--radius);
+  overflow:hidden;border:1px solid var(--line);
+  transition:transform .25s,border-color .25s;
+  display:flex;flex-direction:column;
+}
+.card:hover{transform:translateY(-6px);border-color:rgba(245,182,66,.4)}
+.card-thumb{
+  aspect-ratio:16/10;position:relative;
+  background:linear-gradient(135deg,#2d1b69,#6d28d9);
+  display:flex;align-items:center;justify-content:center;
+  font-size:3rem;overflow:hidden;
+}
+.card-thumb.c1{background:linear-gradient(135deg,#6d28d9,#db2777)}
+.card-thumb.c2{background:linear-gradient(135deg,#0891b2,#4338ca)}
+.card-thumb.c3{background:linear-gradient(135deg,#c2410c,#7c2d12)}
+.card-thumb.c4{background:linear-gradient(135deg,#047857,#065f46)}
+.card-thumb.c5{background:linear-gradient(135deg,#7e22ce,#4c1d95)}
+.card-thumb.c6{background:linear-gradient(135deg,#be123c,#881337)}
+.card-tag{
+  position:absolute;top:12px;left:12px;
+  background:rgba(15,11,31,.75);backdrop-filter:blur(6px);
+  padding:4px 12px;border-radius:999px;font-size:.75rem;font-weight:600;
+  color:var(--accent);
+}
+.card-body{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card-body h3{
+  font-size:1.12rem;font-weight:700;line-height:1.45;
+  font-family:'Noto Sans Sinhala',sans-serif;
+}
+.card-body h3 a:hover{color:var(--accent)}
+.card-excerpt{color:var(--muted);font-size:.9rem;flex:1}
+.card-meta{display:flex;gap:12px;font-size:.8rem;color:var(--muted);margin-top:6px}
+.card-meta .dot{opacity:.5}
+
+/* ---------- CATEGORIES STRIP ---------- */
+.cats{
+  display:flex;flex-wrap:wrap;gap:12px;justify-content:center;
+}
+.cat-chip{
+  background:var(--bg-soft);border:1px solid var(--line);
+  padding:12px 22px;border-radius:999px;font-size:.92rem;font-weight:600;
+  transition:.2s;display:flex;align-items:center;gap:8px;
+}
+.cat-chip:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+
+/* ---------- FEATURED BANNER ---------- */
+.featured{
+  background:linear-gradient(120deg,#2d1b69,#4c1d95 60%,#1e1840);
+  border-radius:24px;padding:50px 40px;
+  display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;
+  border:1px solid var(--line);
+}
+.featured h2{
+  font-family:'Noto Serif Sinhala',serif;
+  font-size:clamp(1.6rem,3vw,2.4rem);line-height:1.3;margin-bottom:16px;
+}
+.featured p{color:#cbbfe8;margin-bottom:24px}
+.featured-visual{
+  height:220px;border-radius:16px;
+  background:radial-gradient(circle at 50% 50%,rgba(245,182,66,.3),transparent 70%);
+  display:flex;align-items:center;justify-content:center;font-size:5rem;
+}
+
+/* ---------- NEWSLETTER ---------- */
+.newsletter{
+  max-width:900px;margin:60px auto;padding:0 20px;
+}
+.newsletter-box{
+  background:var(--card);border:1px solid var(--line);
+  border-radius:24px;padding:50px 30px;text-align:center;
+}
+.newsletter-box h2{
+  font-family:'Noto Serif Sinhala',serif;font-size:1.7rem;margin-bottom:12px;
+}
+.newsletter-box p{color:var(--muted);margin-bottom:26px}
+.newsletter-form{
+  display:flex;gap:10px;max-width:460px;margin:0 auto;flex-wrap:wrap;
+}
+.newsletter-form input{
+  flex:1;min-width:200px;padding:13px 18px;border-radius:999px;
+  border:1px solid var(--line);background:var(--bg-soft);
+  color:var(--ink);font-family:inherit;font-size:.95rem;
+}
+.newsletter-form input:focus{outline:none;border-color:var(--accent)}
+.newsletter-form button{
+  padding:13px 26px;border-radius:999px;border:none;cursor:pointer;
+  background:linear-gradient(90deg,var(--accent),#ff8a3d);
+  color:#1a1030;font-weight:700;font-family:inherit;font-size:.95rem;
+}
+
+/* ---------- FOOTER ---------- */
+.site-footer{
+  border-top:1px solid var(--line);margin-top:60px;
+  padding:50px 20px 30px;
+}
+.footer-inner{
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;
+}
+.footer-inner h4{font-size:.95rem;margin-bottom:16px;color:var(--accent)}
+.footer-inner a{color:var(--muted);font-size:.9rem;display:block;margin-bottom:10px}
+.footer-inner a:hover{color:var(--ink)}
+.footer-brand p{color:var(--muted);font-size:.9rem;margin-top:12px;max-width:280px}
+.socials{display:flex;gap:12px;margin-top:18px}
+.socials a{
+  width:38px;height:38px;border-radius:50%;
+  background:var(--bg-soft);border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;
+  transition:.2s;margin:0;
+}
+.socials a:hover{border-color:var(--accent);color:var(--accent)}
+.copyright{
+  max-width:1200px;margin:40px auto 0;
+  padding-top:24px;border-top:1px solid var(--line);
+  text-align:center;color:var(--muted);font-size:.85rem;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:960px){
+  .hero{grid-template-columns:1fr;text-align:center;padding:50px 20px}
+  .hero p{margin-inline:auto}
+  .hero-cta{justify-content:center}
+  .hero-visual{height:260px;order:-1}
+  .grid-3{grid-template-columns:repeat(2,1fr)}
+  .featured{grid-template-columns:1fr;padding:36px 26px;text-align:center}
+  .footer-inner{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .nav-links{display:none}
+  .menu-btn{display:block}
+  .hero-visual{height:220px}
+  .planet{width:90px;height:90px}
+  .orbit-1{width:200px;height:200px}
+  .orbit-2{width:150px;height:150px}
+  .grid-3,.grid-2{grid-template-columns:1fr}
+  .section{padding:36px 16px}
+  .footer-inner{grid-template-columns:1fr;text-align:center}
+  .footer-brand p{margin-inline:auto}
+  .socials{justify-content:center}
+  .newsletter-box{padding:36px 20px}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <nav class="nav">
+    <a href="#" class="logo"><span class="dot"></span> අරුම පුදුම ලෝකය</a>
+    <div class="nav-links">
+      <a href="#">මුල් පිටුව</a>
+      <a href="#articles">ලිපි</a>
+      <a href="#categories">වර්ග</a>
+      <a href="#about">අප ගැන</a>
+      <a href="#contact">සම්බන්ධ වන්න</a>
+    </div>
+    <div style="display:flex;gap:10px;align-items:center">
+      <button class="lang-btn">EN</button>
+      <button class="menu-btn" aria-label="menu">☰</button>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>ලෝකයේ <span>හිතාගන්න බැරි</span> දේවල් ගැන අපි කතා කරමු</h1>
+    <p>විද්‍යාව, මනස, දර්ශනය සහ අසාමාන්‍ය මිනිස් හැකියාවන් — සරල සිංහලෙන්, පැහැදිලිව. සෑම සතියකම නව ලිපියක්.</p>
+    <div class="hero-cta">
+      <a href="#articles" class="btn btn-primary">ලිපි කියවන්න →</a>
+      <a href="#newsletter" class="btn btn-ghost">දායක වන්න</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="orbit orbit-1"></div>
+    <div class="orbit orbit-2"></div>
+    <div class="planet"></div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="section" id="categories">
+  <div class="section-head">
+    <div>
+      <h2>වර්ග</h2>
+      <p class="sub">ඔබ කැමති මාතෘකාවක් තෝරන්න</p>
+    </div>
+  </div>
+  <div class="cats">
+    <a href="#" class="cat-chip">🔬 විද්‍යාව</a>
+    <a href="#" class="cat-chip">🧠 මනස</a>
+    <a href="#" class="cat-chip">🌌 අවකාශය</a>
+    <a href="#" class="cat-chip">🧘 දර්ශනය</a>
+    <a href="#" class="cat-chip">✨ අසාමාන්‍ය</a>
+    <a href="#" class="cat-chip">📖 ඉතිහාසය</a>
+  </div>
+</section>
+
+<!-- ARTICLES -->
+<section class="section" id="articles">
+  <div class="section-head">
+    <div>
+      <h2>නවතම ලිපි</h2>
+      <p class="sub">සතියේ තෝරාගත් කියවීම්</p>
+    </div>
+    <a href="#" class="view-all">සියල්ල බලන්න →</a>
+  </div>
+  <div class="grid grid-3">
+
+    <article class="card">
+      <div class="card-thumb c1"><span class="card-tag">විද්‍යාව</span>🌀</div>
+      <div class="card-body">
+        <h3><a href="#">Quantum Entanglement: එකවර ස්ථාන දෙකක තියෙන්නේ කොහොමද?</a></h3>
+        <p class="card-excerpt">අංශු දෙකක් එකිනෙකට ඈතින් තිබුණත්, එකක් වෙනස් කළොත් අනිත් එකට බලපානවා. ඒ ඇයි?</p>
+        <div class="card-meta"><span>කසුන් පෙරේරා</span><span class="dot">•</span><span>8 min</span></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-thumb c2"><span class="card-tag">මනස</span>🧠</div>
+      <div class="card-body">
+        <h3><a href="#">Déjà vu: "මේක කලින් දැකලා" කියලා හිතෙන්නේ ඇයි?</a></h3>
+        <p class="card-excerpt">ඔබට කවදා හරි තැනකට ආවාම "මෙතනට ඇවිත් ඉන්නවා වගේ" දැනුණාද? ඒ මොකක්ද?</p>
+        <div class="card-meta"><span>නදීෂා ජයවර්ධන</span><span class="dot">•</span><span>6 min</span></div>
+      </div>
+    </article>
+
+    <!-- මේ කාඩ් එකේ ලින්ක් එක synesthesia.html වෙත වෙනස් කර ඇත -->
+    <article class="card">
+      <div class="card-thumb c3"><span class="card-tag">අසාමාන්‍ය</span>🎨</div>
+      <div class="card-body">
+        <h3><a href="synesthesia.html">Synesthesia: ශබ්ද වර්ණ විදිහට දකින මිනිස්සු</a></h3>
+        <p class="card-excerpt">සමහරුන්ට අකුරු දකිනකොට වර්ණ පේනවා. මේක මොළයේ විශේෂ ලක්ෂණයක්.</p>
+        <div class="card-meta"><span>දිලීප රණසිංහ</span><span class="dot">•</span><span>5 min</span></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-thumb c4"><span class="card-tag">අවකාශය</span>🌌</div>
+      <div class="card-body">
+        <h3><a href="#">කාලය නැවැත්තුවොත් මොකද වෙන්නේ?</a></h3>
+        <p class="card-excerpt">අවකාශ-කාලය යනු එකම දෙයක්. ඒක පැහැදිලි කරගන්න පුළුවන් ආකාරයක් තියෙනවා.</p>
+        <div class="card-meta"><span>අනුරාධා සිල්වා</span><span class="dot">•</span><span>10 min</span></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-thumb c5"><span class="card-tag">දර්ශනය</span>🤔</div>
+      <div class="card-body">
+        <h3><a href="#">Mandela Effect: ඇයි හැමෝම එකම වැරදි මතකය තියාගන්නේ?</a></h3>
+        <p class="card-excerpt">මිලියන ගණන් මිනිස්සුන්ට එකම වැරදි මතකයක් තියෙනවා නම්, ඒක මොළයේ ගැටළුවක්ද?</p>
+        <div class="card-meta"><span>තරිඳු ප්‍රනාන්දු</span><span class="dot">•</span><span>7 min</span></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-thumb c6"><span class="card-tag">ඉතිහාසය</span>📜</div>
+      <div class="card-body">
+        <h3><a href="#">Savant Syndrome: සාමාන්‍ය මිනිස්සුන්ට කරන්න බැරි දේ කරන අය</a></h3>
+        <p class="card-excerpt">පින්තූරයක් දැක්ක ගමන් සම්පූර්ණ නගරයක් මතක තියාගන්න පුළුවන් කොහොමද?</p>
+        <div class="card-meta"><span>මහේෂ් කුමාර</span><span class="dot">•</span><span>9 min</span></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- FEATURED -->
+<section class="section">
+  <div class="featured">
+    <div>
+      <span style="color:var(--accent);font-size:.85rem;font-weight:700;letter-spacing:1px">VÍŠEṢA LĪPIYA</span>
+      <h2>අනන්තය (Infinity) — ගණිතයේ විශ්මය</h2>
+      <p>අනන්තය කියන්නේ අංකයක්ද? එහෙනම් අනන්තයට 1ක් එකතු කළොත් මොකද වෙන්නේ? ගණිතඥයින් 2000 වසරක් තිස්සේ මේ ගැන විවාද කරනවා.</p>
+      <a href="#" class="btn btn-primary">කියවන්න →</a>
+    </div>
+    <div class="featured-visual">∞</div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter" id="newsletter">
+  <div class="newsletter-box">
+    <h2>සතියේ ලිපිය ඔබේ email එකට</h2>
+    <p>සෑම සිකුරාදාවකම අලුත් ලිපියක්. Spam නැහැ, කවදා හරි unsubscribe කරන්න පුළුවන්.</p>
+    <form class="newsletter-form" onsubmit="event.preventDefault();alert('ස්තූතියි! ඉක්මනින් ඔබව සම්බන්ධ කරගන්නම්.');">
+      <input type="email" placeholder="ඔබේ email ලිපිනය" required>
+      <button type="submit">දායක වන්න</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer" id="about">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="#" class="logo"><span class="dot"></span> අරුම පුදුම ලෝකය</a>
+      <p>ලෝකයේ හිතාගන්න බැරි දේවල් ගැන සරල සිංහලෙන් ලියන අන්තර්ජාල සඟරාවක්. ශ්‍රී ලංකාවේ පාඨකයන් සඳහා.</p>
+      <div class="socials">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="YouTube">▶</a>
+        <a href="#" aria-label="Instagram">◉</a>
+        <a href="#" aria-label="Email">✉</a>
+      </div>
+    </div>
+    <div>
+      <h4>මාතෘකා</h4>
+      <a href="#">විද්‍යාව</a>
+      <a href="#">මනස</a>
+      <a href="#">අවකාශය</a>
+      <a href="#">දර්ශනය</a>
+    </div>
+    <div>
+      <h4>අප ගැන</h4>
+      <a href="#">අපේ කතාව</a>
+      <a href="#">ලේඛකයින්</a>
+      <a href="#">සම්බන්ධ වන්න</a>
+      <a href="#">දායක වන්න</a>
+    </div>
+    <div id="contact">
+      <h4>සම්බන්ධතා</h4>
+      <a href="mailto:hello@amarulokaya.lk">hello@amarulokaya.lk</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+  <div class="copyright">
+    © 2026 අරුම පුදුම ලෝකය. සියලුම හිමිකම් ඇවිරිණි. | Made with 💜 in Sri Lanka
+  </div>
+</footer>
+
+<script>
+  // Mobile menu
+  document.querySelector('.menu-btn').addEventListener('click', ()=>{
+    const links = document.querySelector('.nav-links');
+    if(links.style.display === 'flex'){
+      links.style.display = 'none';
+    } else {
+      links.style.display = 'flex';
+      links.style.position = 'absolute';
+      links.style.top = '100%';
+      links.style.left = '0';
+      links.style.right = '0';
+      links.style.background = 'var(--bg-soft)';
+      links.style.flexDirection = 'column';
+      links.style.padding = '20px';
+      links.style.gap = '16px';
+      links.style.borderBottom = '1px solid var(--line)';
+    }
+  });
+</script>
+</body>
+</html>
