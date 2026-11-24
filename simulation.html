@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>සිමියුලේෂන් උපකල්පනය: අපි ජීවත් වෙන්නේ පරිගණක ක්‍රීඩාවකද? — අරුම පුදුම ලෝකය</title>
+<meta name="description" content="අපි ජීවත් වෙන්නේ ඇත්තටම සැබෑ ලෝකයේද? නැත්නම් අපි කවුරුහරි හදපු ලොකු පරිගණක ක්‍රීඩාවක චරිතද? Simulation Theory ගැන කියවන්න.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="අරුම පුදුම ලෝකය">
+<meta property="og:title" content="සිමියුලේෂන් උපකල්පනය: අපි ජීවත් වෙන්නේ පරිගණක ක්‍රීඩාවකද?">
+<meta property="og:description" content="අපි ජීවත් වෙන්නේ ඇත්තටම සැබෑ ලෝකයේද? නැත්නම් අපි කවුරුහරි හදපු ලොකු පරිගණක ක්‍රීඩාවක චරිතද?">
+<meta property="og:image" content="https://picsum.photos/seed/sim-og/1200/630">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;600;800&family=Noto+Serif+Sinhala:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0f0b1f; --bg-soft:#171230; --card:#1e1840;
+  --ink:#f2eefb; --muted:#a99fc6;
+  --accent:#f5b642; --accent-2:#8b5cf6;
+  --line:rgba(255,255,255,0.08); --radius:18px;
+}
+*{box-sizing:border-box; margin:0; padding:0}
+body{font-family:'Noto Sans Sinhala', system-ui, sans-serif; background:var(--bg); color:var(--ink); line-height:1.8; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+a{color:inherit; text-decoration:none}
+img{max-width:100%; display:block; height:auto}
+.site-header{position:sticky; top:0; z-index:50; background:rgba(15,11,31,0.88); backdrop-filter:blur(12px); border-bottom:1px solid var(--line);}
+.nav{max-width:1000px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:15px 20px; gap:20px;}
+.logo{font-family:'Noto Serif Sinhala', serif; font-weight:700; font-size:1.35rem; display:flex; align-items:center; gap:10px;}
+.logo .dot{width:12px; height:12px; border-radius:50%; background:var(--accent); box-shadow:0 0 12px var(--accent)}
+.nav-links{display:flex; gap:26px; font-size:.95rem}
+.nav-links a{color:var(--muted); transition:color .2s}
+.nav-links a:hover{color:var(--accent)}
+.menu-btn{display:none; background:none; border:none; color:var(--ink); font-size:1.6rem; cursor:pointer}
+.article-wrap{max-width:760px; margin:0 auto; padding:40px 20px 60px}
+.article-hero{margin:0 0 30px 0; border-radius:20px; overflow:hidden; position:relative;}
+.article-hero img{width:100%; aspect-ratio:16/9; object-fit:cover;}
+.hero-caption{position:absolute; bottom:0; left:0; right:0; padding:40px 20px 16px; background:linear-gradient(to top, rgba(15,11,31,0.95), transparent); font-size:.85rem; color:var(--muted);}
+.article-tag{display:inline-block; padding:6px 14px; border-radius:999px; background:rgba(245,182,66,.15); color:var(--accent); font-size:.82rem; font-weight:700; margin-bottom:16px;}
+.article-title{font-family:'Noto Serif Sinhala', serif; font-size:clamp(1.8rem, 4vw, 2.6rem); line-height:1.3; font-weight:700; margin-bottom:20px;}
+.article-meta{display:flex; flex-wrap:wrap; gap:16px; color:var(--muted); font-size:.9rem; margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid var(--line);}
+.author{display:flex; align-items:center; gap:8px}
+.avatar{width:36px; height:36px; border-radius:50%; background:linear-gradient(135deg, var(--accent-2), var(--accent)); display:flex; align-items:center; justify-content:center; font-size:1rem; font-weight:700; color:#1a1030;}
+.share-bar{display:flex; flex-wrap:wrap; align-items:center; gap:15px; padding:16px 20px; margin:20px 0 35px; background:var(--card); border-radius:14px; border:1px solid var(--line);}
+.share-label{font-size:.9rem; color:var(--muted); font-weight:600}
+.share-buttons{display:flex; gap:10px; flex-wrap:wrap; flex:1}
+.share-btn{display:inline-flex; align-items:center; gap:8px; padding:10px 18px; border-radius:999px; border:1px solid var(--line); background:var(--bg-soft); color:var(--ink); font-family:inherit; font-size:.9rem; font-weight:600; cursor:pointer; transition:.2s;}
+.share-btn:hover{transform:translateY(-2px)}
+.share-btn.whatsapp:hover{background:#25D366; color:#fff; border-color:#25D366}
+.share-btn.facebook:hover{background:#1877F2; color:#fff; border-color:#1877F2}
+.share-btn.copy:hover{background:var(--accent); color:#1a1030; border-color:var(--accent)}
+.share-btn.copied{background:#059669; color:#fff; border-color:#059669}
+.article-body{font-size:1.08rem; line-height:1.9; color:#ded7f0;}
+.article-body p{margin-bottom:24px;}
+.article-body h2{font-family:'Noto Serif Sinhala', serif; font-size:1.6rem; margin:40px 0 16px; color:var(--ink); line-height:1.4;}
+.article-body h3{font-size:1.2rem; margin:30px 0 12px;}
+.article-body strong{color:var(--accent);}
+.article-body ul{margin:0 0 24px 24px;}
+.article-body li{margin-bottom:10px;}
+.article-body blockquote { border-left: 4px solid var(--accent); margin: 20px 0; padding: 10px 20px; background: rgba(245, 182, 66, 0.1); font-style: italic; }
+.comments-section{margin:40px 0 20px; padding-top:40px; border-top:1px solid var(--line);}
+.comments-title{font-family:'Noto Serif Sinhala', serif; font-size:1.5rem; margin-bottom:24px; display:flex; align-items:center; gap:12px;}
+.comments-title::before{content:''; width:5px; height:26px; background:var(--accent); border-radius:3px;}
+#disqus_thread{background:var(--card); padding:20px; border-radius:16px; border:1px solid var(--line); min-height:200px;}
+.site-footer{border-top:1px solid var(--line); margin-top:60px; padding:40px 20px; text-align:center;}
+.site-footer .logo{justify-content:center; margin-bottom:12px;}
+.site-footer p{color:var(--muted); font-size:.9rem;}
+.copyright{margin-top:20px; font-size:.8rem; color:var(--muted);}
+@media (max-width:640px){
+  .nav-links{display:none;} .menu-btn{display:block;} .article-wrap{padding:20px 16px 40px;}
+  .share-bar{flex-direction:column; align-items:stretch; text-align:center;} .share-buttons{justify-content:center;}
+  .share-btn{flex:1; justify-content:center;}
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="logo"><span class="dot"></span> අරුම පුදුම ලෝකය</a>
+    <div class="nav-links"><a href="index.html">මුල් පිටුව</a><a href="all-articles.html">සියලුම ලිපි</a></div>
+    <button class="menu-btn">☰</button>
+  </nav>
+</header>
+<main class="article-wrap">
+  <figure class="article-hero">
+    <img src="https://picsum.photos/seed/sim/1200/675" alt="සිමියුලේෂන් උපකල්පනය">
+    <figcaption class="hero-caption">ඔබ අවදි වෙන විට, මේ සැබෑ ලෝකයද? නැත්නම් ඔබ හිරවුණු සිහිනයක්ද?</figcaption>
+  </figure>
+  <span class="article-tag">දර්ශනය</span>
+  <h1 class="article-title">සිමියුලේෂන් උපකල්පනය (Simulation Theory): අපි ජීවත් වෙන්නේ පරිගණක ක්‍රීඩාවකද?</h1>
+  <div class="article-meta">
+    <div class="author"><span class="avatar">අ</span><span>අරුම පුදුම ලෝකය</span></div>
+    <span>2026 නොවැම්බර් 26</span><span>8 min කියවීම</span>
+  </div>
+  <div class="share-bar">
+    <span class="share-label">මේ ලිපිය බෙදාගන්න:</span>
+    <div class="share-buttons">
+      <button class="share-btn whatsapp" onclick="shareArticle('whatsapp')"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5 4.5 1.9.8 2.6.9 3.5.8.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.3c1.4.7 3 1.1 4.7 1.1 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>WhatsApp</button>
+      <button class="share-btn facebook" onclick="shareArticle('facebook')"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M22 12c0-5.5-4.5-10-10-10S2 6.5 2 12c0 5 3.7 9.1 8.4 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7C18.3 21.1 22 17 22 12z"/></svg>Facebook</button>
+      <button class="share-btn copy" id="copyBtn" onclick="shareArticle('copy')"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.1 0l3-3a5 5 0 0 0-7.1-7.1L11.7 4"/><path d="M14 11a5 5 0 0 0-7.1 0l-3 3a5 5 0 0 0 7.1 7.1l1.3-1.3"/></svg><span id="copyText">Copy Link</span></button>
+    </div>
+  </div>
+  <article class="article-body">
+    <p>ඔබ "The Matrix" කියන චිත්‍රපටය බලලා තියෙනවාද? ඒකේ මිනිස්සුන්ට හිතෙන්නේ ඔවුන් ඇත්ත ලෝකයේ ජීවත් වෙනවා කියලා. නමුත් ඇත්තටම ඔවුන් ජීවත් වෙන්නේ පරිගණකයකින් මවපු ලෝකයකයි. මේ අදහස ඇත්තටම වෙන්න පුළුවන් දෙයක්ද? විද්‍යාඥයින් සහ දාර්ශනිකයින් මේ ගැන අවුරුදු ගණනාවක් තිස්සේ කතා කරනවා. ඒකට කියන්නේ <strong>සිමියුලේෂන් උපකල්පනය (Simulation Theory)</strong> කියලා.</p>
+    <h2>අපි පරිගණක ක්‍රීඩාවක ඉන්නවාද?</h2>
+    <p>මේ උපකල්පනයට අනුව, අපි ජීවත් වෙන මේ ලෝකය, අපේ ඇඟවල්, අපි දකින දේවල් ඔක්කොම ඇත්තටම තියෙන දේවල් නෙවෙයි. ඒවා ගොඩක් දියුණු තාක්ෂණයක් තියෙන අනාගත මිනිස්සුන් (හෝ පිටසක්වල ජීවීන්) හදපු අති දැවැන්ත පරිගණක ආකෘතියක (Simulation) කොටසක්. අපි ඒකේ ඉන්න "NPC" (Non-Player Characters) හෝ "Avatars" වගේ.</p>
+    <h2>මේක ඔප්පු කරන්න පුළුවන්ද?</h2>
+    <p>අපේ ලෝකය පරිගණකයකින් හදපු එකක් නම්, ඒකේ "Glitches" (දෝෂ) පේන්න තියෙන්න ඕනේ නේද? ඇත්තටම අපේ ලෝකයේ එහෙම දේවල් තියෙනවාද?</p>
+    <h3>1. ක්වොන්ටම් අවිනිශ්චිතතාවය (Quantum Uncertainty)</h3>
+    <p>අපේ ලෝකයේ කුඩාම අංශු (Particles) ගත්තම, ඒවා එකවර ස්ථාන දෙකක ඉන්නවා වගේ හැසිරෙනවා. ඒවා නිශ්චිතව පවතින්නේ අපි ඒවා දිහා බලනකොට විතරයි. මේක ගොඩක් දෙනා සසඳන්නේ පරිගණක ක්‍රීඩාවක ඉන්න චරිතයක්, අපි ඒ දිහා බලනකොට විතරක් "Render" වෙනවා වගේ කියලයි.</p>
+    <h3>2. ලෝකයේ උපරිම වේගය (Speed of Light)</h3>
+    <p>ආලෝකයට වඩා වේගයෙන් යන්න පුළුවන් කිසිම දෙයක් නැහැ. මේක අපේ විශ්වයේ "උපරිම වේග සීමාව" (Speed limit). මේක පරිගණක ක්‍රීඩාවක "Processor එකේ උපරිම ධාරිතාව" වගේ වැඩ කරනවා වෙන්න පුළුවන්.</p>
+    <h3>3. විශ්වයේ අංශු (Pixelation)</h3>
+    <p>අපි පරිගණක තිරයක පින්තූරයක් ලොකු කරලා බැලුවොත්, ඒක කුඩා කොටු (Pixels) වලින් හදලා තියෙනවා පේනවා. අපේ විශ්වයත් එහෙමද? භෞතික විද්‍යාඥයින් කියන විදිහට, අවකාශයට යා හැකි කුඩාම දුර ප්‍රමාණයක් තියෙනවා (Planck length). ඒකත් විශ්වයේ "Pixel" එකක් වගේ නෙවෙයිද?</p>
+    <h2>මේක ප්‍රසිද්ධ කළේ කවුද?</h2>
+    <p>2003 දී නික් බොස්ට්‍රොම් (Nick Bostrom) කියන දාර්ශනිකයා මේ ගැන විස්තරාත්මකව ලිව්වා. ඔහු කිව්වා මේ අවස්ථා 3න් එකක් හෝ සත්‍ය වෙන්න ඕනේ කියලා:</p>
+    <ul>
+      <li>මිනිස්සු මේ වගේ සිමියුලේෂන් එකක් හදන්න තරම් දියුණු වෙන්න කලින් වඳ වෙලා යනවා.</li>
+      <li>අපි ටිකක් සිමියුලේෂන් එකක් හැදුවත්, ඒක අපේ ලෝකය තරම් සැබෑ කරන්න බැහැ.</li>
+      <li>අපි ජීවත් වෙන්නේ දැනටමත් එහෙම සිමියුලේෂන් එකක ඇතුළේ!</li>
+    </ul>
+    <p>ඔබට මොකද හිතෙන්නේ? ඔබ නිදාගෙන අවදි වුනාම, ඔබට තේරුනොත් ඔබ ජීවත් වෙන්නේ පරිගණක ක්‍රීඩාවක කියලා? පහළින් ඇති Comments කොටසේ ඔබේ අදහස් ලියන්න!</p>
+  </article>
+  <section class="comments-section">
+    <h2 class="comments-title">ඔබේ අදහස් (Comments)</h2>
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () { this.page.url = window.location.href; this.page.identifier = 'simulation-article-12'; };
+      (function() { var d = document, s = d.createElement('script'); s.src = 'https://aruama-puduma-lokaya.disqus.com/embed.js'; s.setAttribute('data-timestamp', +new Date()); (d.head || d.body).appendChild(s); })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+  </section>
+</main>
+<footer class="site-footer">
+  <a href="index.html" class="logo"><span class="dot"></span> අරුම පුදුම ලෝකය</a>
+  <p>ලෝකයේ හිතාගන්න බැරි දේවල් ගැන සරල සිංහලෙන්.</p>
+  <div class="copyright">© 2026 අරුම පුදුම ලෝකය. සියලුම හිමිකම් ඇවිරිණි.</div>
+</footer>
+<script>
+  function shareArticle(platform) {
+    const url = window.location.href; const title = document.title.split('—')[0].trim();
+    if (platform === 'whatsapp') { window.open(`https://wa.me/?text=${encodeURIComponent(title)}%0A%0A${encodeURIComponent(url)}`, '_blank'); } 
+    else if (platform === 'facebook') { window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank', 'width=600,height=600'); } 
+    else if (platform === 'copy') { navigator.clipboard.writeText(url).then(() => { const btn = document.getElementById('copyBtn'); const text = document.getElementById('copyText'); btn.classList.add('copied'); text.innerText = 'Copied!'; setTimeout(() => { btn.classList.remove('copied'); text.innerText = 'Copy Link'; }, 2000); }); }
+  }
+  document.querySelector('.menu-btn').addEventListener('click', ()=>{
+    const links = document.querySelector('.nav-links');
+    if(links.style.display === 'flex'){ links.style.display = 'none'; } 
+    else { links.style.display = 'flex'; links.style.position = 'absolute'; links.style.top = '100%'; links.style.left = '0'; links.style.right = '0'; links.style.background = 'var(--bg)'; links.style.flexDirection = 'column'; links.style.padding = '20px'; links.style.gap = '16px'; links.style.borderBottom = '1px solid var(--line)'; }
+  });
+</script>
+</body>
+</html>
