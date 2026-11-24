@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>සියලුම ලිපි — අරුම පුදුම ලෝකය</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;600;800&family=Noto+Serif+Sinhala:wght@700&display=swap" rel="stylesheet">
+<style>
+/* CSS එක - මුල් පිටුවේ තියෙන එකම CSS එක */
+:root{
+  --bg:#0f0b1f; --bg-soft:#171230; --card:#1e1840;
+  --ink:#f2eefb; --muted:#a99fc6;
+  --accent:#f5b642; --accent-2:#8b5cf6;
+  --line:rgba(255,255,255,0.08); --radius:18px;
+}
+*{box-sizing:border-box; margin:0; padding:0}
+body{font-family:'Noto Sans Sinhala', system-ui, sans-serif; background:var(--bg); color:var(--ink); line-height:1.7; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+a{color:inherit; text-decoration:none}
+img{max-width:100%; display:block}
+.site-header{position:sticky; top:0; z-index:50; background:rgba(15,11,31,0.85); backdrop-filter:blur(12px); border-bottom:1px solid var(--line);}
+.nav{max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:14px 20px; gap:20px;}
+.logo{font-family:'Noto Serif Sinhala', serif; font-weight:700; font-size:1.35rem; display:flex; align-items:center; gap:10px;}
+.logo .dot{width:12px; height:12px; border-radius:50%; background:var(--accent); box-shadow:0 0 12px var(--accent)}
+.nav-links{display:flex; gap:26px; font-size:.95rem}
+.nav-links a{color:var(--muted); transition:color .2s}
+.nav-links a:hover{color:var(--accent)}
+.menu-btn{display:none; background:none; border:none; color:var(--ink); font-size:1.6rem; cursor:pointer}
+
+.page-header{max-width:1200px; margin:0 auto; padding:60px 20px 30px; text-align:center;}
+.page-header h1{font-family:'Noto Serif Sinhala', serif; font-size:clamp(2rem,4vw,3rem); color:var(--accent); margin-bottom:10px;}
+.page-header p{color:var(--muted); font-size:1.1rem;}
+
+.section{max-width:1200px; margin:0 auto; padding:20px 20px 60px;}
+.grid{display:grid; gap:24px;}
+.grid-3{grid-template-columns:repeat(3,1fr);}
+.card{background:var(--card); border-radius:var(--radius); overflow:hidden; border:1px solid var(--line); transition:transform .25s,border-color .25s; display:flex; flex-direction:column;}
+.card:hover{transform:translateY(-6px); border-color:rgba(245,182,66,.4)}
+.card-thumb{aspect-ratio:16/10; position:relative; overflow:hidden; background:linear-gradient(135deg,#2d1b69,#6d28d9); display:flex; align-items:center; justify-content:center; font-size:3rem;}
+.card-thumb.c1{background:linear-gradient(135deg,#6d28d9,#db2777)} .card-thumb.c2{background:linear-gradient(135deg,#0891b2,#4338ca)}
+.card-thumb.c3{background:linear-gradient(135deg,#c2410c,#7c2d12)} .card-thumb.c4{background:linear-gradient(135deg,#047857,#065f46)}
+.card-thumb.c5{background:linear-gradient(135deg,#7e22ce,#4c1d95)} .card-thumb.c6{background:linear-gradient(135deg,#be123c,#881337)}
+.card-thumb.c7{background:linear-gradient(135deg,#b45309,#78350f)} .card-thumb.c8{background:linear-gradient(135deg,#0f766e,#115e59)}
+.card-thumb.c9{background:linear-gradient(135deg,#1d4ed8,#1e3a8a)} .card-thumb.c10{background:linear-gradient(135deg,#be185d,#831843)}
+.card-tag{position:absolute; top:12px; left:12px; background:rgba(15,11,31,.75); backdrop-filter:blur(6px); padding:4px 12px; border-radius:999px; font-size:.75rem; font-weight:600; color:var(--accent);}
+.card-body{padding:20px; display:flex; flex-direction:column; gap:10px; flex:1}
+.card-body h3{font-size:1.12rem; font-weight:700; line-height:1.45}
+.card-body h3 a:hover{color:var(--accent)}
+.card-excerpt{color:var(--muted); font-size:.9rem; flex:1}
+.card-meta{display:flex; gap:12px; font-size:.8rem; color:var(--muted); margin-top:6px}
+
+.site-footer{border-top:1px solid var(--line); margin-top:40px; padding:40px 20px 30px; text-align:center;}
+.site-footer .logo{justify-content:center; margin-bottom:12px;}
+.site-footer p{color:var(--muted); font-size:.9rem;}
+.copyright{margin-top:20px; font-size:.8rem; color:var(--muted);}
+
+@media (max-width:960px){ .grid-3{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:640px){ .nav-links{display:none;} .menu-btn{display:block;} .grid-3{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="logo"><span class="dot"></span> අරුම පුදුම ලෝකය</a>
+    <div class="nav-links">
+      <a href="index.html">මුල් පිටුව</a>
+      <a href="all-articles.html">සියලුම ලිපි</a>
+    </div>
+    <button class="menu-btn">☰</button>
+  </nav>
+</header>
+
+<section class="page-header">
+  <h1>සියලුම ලිපි</h1>
+  <p>අප විසින් ලියන ලද සියලුම අරුම පුදුම ලිපි මෙතනින් කියවන්න.</p>
+</section>
+
+<section class="section">
+  <div class="grid grid-3">
+
+    <!-- ලිපිය 1 -->
+    <article class="card">
+      <div class="card-thumb c1"><span class="card-tag">මනස</span>🌙</div>
+      <div class="card-body">
+        <h3><a href="lucid.html">පැහැදිලි සිහින (Lucid Dreaming): ඔබේ සිහිනය තුළ ඔබ රජුයි!</a></h3>
+        <p class="card-excerpt">සිහිනයක් දකින අතරතුර, තමන් සිහිනයක් දකින බව දැනගෙන එය පාලනය කරන්න පුළුවන්ද?</p>
+        <div class="card-meta"><span>අරුම පුදුම ලෝකය</span><span class="dot">•</span><span>6 min</span></div>
+      </div>
+    </article>
+
+    <!-- ලිපිය 2 -->
+    <article class="card">
+      <div class="card-thumb c2"><span class="card-tag">අසාමාන්‍ය</span>🎨</div>
+      <div class="card-body">
+        <h3><a href="tetrachromacy.html">ටෙට්‍රාක්‍රොමැසි: සාමාන්‍ය මිනිස්සුන්ට නොපෙනෙන වර්ණ දකින අය</a></h3>
+        <p class="card-excerpt">සාමාන්‍ය මිනිස්සුන්ට වඩා වර්ණ 100 ගුණයක් දකින්න පුළුවන් ඇස් තියෙන අය ගැන.</p>
+        <div class="card-meta"><span>අරුම පුදුම ලෝකය</span><span class="dot">•</span><span>5 min</span></div>
+      </div>
+    </article>
+
+    <!-- ලිපිය 3 -->
+    <article class="card">
+      <div class="card-thumb c3"><span class="card-tag">මනස</span>🧠</div>
+      <div class="card-body">
+        <h3><a href="hyperthymesia.html">හයිපර්තයිමීසියා: අතීතයේ හැම දවසක්ම මතක තියාගන්නා අය</a></h3>
+        <p class="card-excerpt">ජීවිතයේ හැම දවසක්ම අකුරට පිට අකුර මතක තියාගන්න පුළුවන් නම්?</p>
+        <div class="card-meta"><span>අරුම පුදුම ලෝකය</span><span class="dot">•</span><span>7 min</span></div>
+      </div>
+    </article>
+
+    <!-- ලිපිය 4 -->
+    <article class="card">
+      <div class="card-thumb c4"><span class="card-tag">විද්‍යාව</span>🌀</div>
+      <div class="card-body">
+        <h3><a href="quantum.html">Quantum Entanglement: එකවර ස්ථාන දෙකක තියෙන්නේ කොහොමද?</a></h3>
+        <p class="card-excerpt">අංශු දෙකක් එකිනෙකට ඈතින් තිබුණත්, එකක් වෙනස් කළොත් අනිත් එකට බලපානවා. ඒ ඇයි?</p>
+        <div class="card-meta"><span>අරුම පුදුම ලෝකය</span><span class="dot">•</span><span>8 min</span></div>
+      </div>
+    </article>
+
+    <!-- ලිපිය 5 -->
+    <article class="card">
+      <div class="card-thumb c5"><span class="card-tag">මනස</span>🌀</div>
+      <div class="card-body">
+        <h3><a href="dejavu.html">Déjà vu: "මේක කලින් දැකලා" කියලා හිතෙන්නේ ඇයි?</a></h3>
+        <p class="card-excerpt">ඔබට කවදා හරි තැනකට ආවාම "මෙතනට ඇවිත් ඉන්නවා වගේ" දැනුණාද? ඒ මොකක්ද?</p>
+        <div class="card-meta"><span>අරුම පුදුම ලෝකය</span><span class="dot">•</span><span>6 min</span></div>
+      </div>
+    </article>
+
+    <!-- ලිපිය 6 -->
+    <article class="card">
+      <div class="card-thumb c6"><span class="card-tag">දර්ශනය</span>🤔</div>
+      <div class="card-body">
+        <h3><a href="mandela.html">Mandela Effect: ඇයි හැමෝම එකම වැරදි මතකය තියාගන්නේ?</a></h3>
+        <p class="card-excerpt">මිලියන ගණන් මිනිස්සුන්ට එකම වැරදි මතකයක් තියෙනවා නම්, ඒක මොළයේ ගැටළුවක්ද?</p>
+        <div class="card-meta"><span>අරුම පුදුම ලෝකය</span><span class="dot">•</span><span>7 min</span></div>
+      </div>
+    </article>
+
+    <!-- ලිපිය 7 -->
+    <article class="card">
+      <div class="card-thumb c7"><span class="card-tag">අසාමාන්‍ය</span>🎨</div>
+      <div class="card-body">
+        <h3><a href="synesthesia.html">Synesthesia: ශබ්ද වර්ණ විදිහට දකින මිනිස්සු</a></h3>
+        <p class="card-excerpt">සමහරුන්ට අකුරු දකිනකොට වර්ණ පේනවා. මේක මොළයේ විශේෂ ලක්ෂණයක්.</p>
+        <div class="card-meta"><span>අරුම පුදුම ලෝකය</span><span class="dot">•</span><span>5 min</span></div>
+      </div>
+    </article>
+
+    <!-- ලිපිය 8 -->
+    <article class="card">
+      <div class="card-thumb c8"><span class="card-tag">අවකාශය</span>🌌</div>
+      <div class="card-body">
+        <h3><a href="time.html">කාලය නැවැත්තුවොත් මොකද වෙන්නේ?</a></h3>
+        <p class="card-excerpt">අවකාශ-කාලය යනු එකම දෙයක්. ඒක පැහැදිලි කරගන්න පුළුවන් ආකාරයක් තියෙනවා.</p>
+        <div class="card-meta"><span>අරුම පුදුම ලෝකය</span><span class="dot">•</span><span>10 min</span></div>
+      </div>
+    </article>
+
+    <!-- ලිපිය 9 -->
+    <article class="card">
+      <div class="card-thumb c9"><span class="card-tag">ඉතිහාසය</span>📜</div>
+      <div class="card-body">
+        <h3><a href="savant.html">Savant Syndrome: සාමාන්‍ය මිනිස්සුන්ට කරන්න බැරි දේ කරන අය</a></h3>
+        <p class="card-excerpt">පින්තූරයක් දැක්ක ගමන් සම්පූර්ණ නගරයක් මතක තියාගන්න පුළුවන් කොහොමද?</p>
+        <div class="card-meta"><span>අරුම පුදුම ලෝකය</span><span class="dot">•</span><span>9 min</span></div>
+      </div>
+    </article>
+
+    <!-- ලිපිය 10 -->
+    <article class="card">
+      <div class="card-thumb c10"><span class="card-tag">ගණිතය</span>♾️</div>
+      <div class="card-body">
+        <h3><a href="infinity.html">අනන්තය (Infinity) — ගණිතයේ විශ්මය</a></h3>
+        <p class="card-excerpt">අනන්තය කියන්නේ අංකයක්ද? ගණිතඥයින් 2000 වසරක් තිස්සේ මේ ගැන විවාද කරනවා.</p>
+        <div class="card-meta"><span>අරුම පුදුම ලෝකය</span><span class="dot">•</span><span>7 min</span></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <a href="index.html" class="logo"><span class="dot"></span> අරුම පුදුම ලෝකය</a>
+  <p>ලෝකයේ හිතාගන්න බැරි දේවල් ගැන සරල සිංහලෙන්.</p>
+  <div class="copyright">© 2026 අරුම පුදුම ලෝකය. සියලුම හිමිකම් ඇවිරිණි.</div>
+</footer>
+
+<script>
+  document.querySelector('.menu-btn').addEventListener('click', ()=>{
+    const links = document.querySelector('.nav-links');
+    if(links.style.display === 'flex'){ links.style.display = 'none'; } 
+    else { links.style.display = 'flex'; links.style.position = 'absolute'; links.style.top = '100%'; links.style.left = '0'; links.style.right = '0'; links.style.background = 'var(--bg)'; links.style.flexDirection = 'column'; links.style.padding = '20px'; links.style.gap = '16px'; links.style.borderBottom = '1px solid var(--line)'; }
+  });
+</script>
+</body>
+</html>
