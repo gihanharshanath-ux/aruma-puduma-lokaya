@@ -131,7 +131,6 @@ img{max-width:100%;display:block}
 /* ---------- ARTICLE GRID ---------- */
 .grid{display:grid;gap:24px}
 .grid-3{grid-template-columns:repeat(3,1fr)}
-.grid-2{grid-template-columns:repeat(2,1fr)}
 .card{
   background:var(--card);border-radius:var(--radius);
   overflow:hidden;border:1px solid var(--line);
@@ -151,12 +150,24 @@ img{max-width:100%;display:block}
 .card-thumb.c4{background:linear-gradient(135deg,#047857,#065f46)}
 .card-thumb.c5{background:linear-gradient(135deg,#7e22ce,#4c1d95)}
 .card-thumb.c6{background:linear-gradient(135deg,#be123c,#881337)}
+.card-thumb.c7{background:linear-gradient(135deg,#b45309,#78350f)}
+.card-thumb.c8{background:linear-gradient(135deg,#0f766e,#115e59)}
+.card-thumb.c9{background:linear-gradient(135deg,#1d4ed8,#1e3a8a)}
 .card-tag{
   position:absolute;top:12px;left:12px;
   background:rgba(15,11,31,.75);backdrop-filter:blur(6px);
   padding:4px 12px;border-radius:999px;font-size:.75rem;font-weight:600;
   color:var(--accent);
 }
+.card-share{
+  position:absolute;top:12px;right:12px;
+  width:34px;height:34px;border-radius:50%;
+  background:rgba(15,11,31,.85);backdrop-filter:blur(6px);
+  border:1px solid var(--line);color:var(--ink);
+  cursor:pointer;font-size:1rem;display:flex;align-items:center;
+  justify-content:center;transition:.2s;
+}
+.card-share:hover{background:var(--accent);color:#1a1030;border-color:var(--accent)}
 .card-body{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1}
 .card-body h3{
   font-size:1.12rem;font-weight:700;line-height:1.45;
@@ -267,7 +278,7 @@ img{max-width:100%;display:block}
   .planet{width:90px;height:90px}
   .orbit-1{width:200px;height:200px}
   .orbit-2{width:150px;height:150px}
-  .grid-3,.grid-2{grid-template-columns:1fr}
+  .grid-3{grid-template-columns:1fr}
   .section{padding:36px 16px}
   .footer-inner{grid-template-columns:1fr;text-align:center}
   .footer-brand p{margin-inline:auto}
@@ -331,17 +342,19 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
-<!-- ARTICLES -->
+<!-- ARTICLES (Latest 9) -->
 <section class="section" id="articles">
   <div class="section-head">
     <div>
       <h2>නවතම ලිපි</h2>
       <p class="sub">සතියේ තෝරාගත් කියවීම්</p>
     </div>
+    <!-- මෙතන ලින්ක් එක all-articles.html වෙත යොමු කර ඇත -->
     <a href="all-articles.html" class="view-all">සියල්ල බලන්න →</a>
   </div>
   <div class="grid grid-3">
-        <!-- ලිපිය: ෂ්‍රෝඩින්ගර්ගේ බළලා -->
+
+    <!-- ලිපිය 1 -->
     <article class="card">
       <div class="card-thumb c1">
         <span class="card-tag">විද්‍යාව</span>🐈
@@ -354,7 +367,7 @@ img{max-width:100%;display:block}
       </div>
     </article>
 
-    <!-- ලිපිය: සිමියුලේෂන් උපකල්පනය -->
+    <!-- ලිපිය 2 -->
     <article class="card">
       <div class="card-thumb c2">
         <span class="card-tag">දර්ශනය</span>💻
@@ -366,11 +379,10 @@ img{max-width:100%;display:block}
         <div class="card-meta"><span>අරුම පුදුම ලෝකය</span><span class="dot">•</span><span>8 min</span></div>
       </div>
     </article>
-        <!-- ================= අලුත් ලිපි 3 (උඩටම) ================= -->
 
-    <!-- ලිපිය 1: පැහැදිලි සිහින (Lucid Dreaming) -->
+    <!-- ලිපිය 3 -->
     <article class="card">
-      <div class="card-thumb c1">
+      <div class="card-thumb c3">
         <span class="card-tag">මනස</span>🌙
         <button class="card-share" data-card-share aria-label="Share">↗</button>
       </div>
@@ -381,9 +393,9 @@ img{max-width:100%;display:block}
       </div>
     </article>
 
-    <!-- ලිපිය 2: ටෙට්‍රාක්‍රොමැසි (Tetrachromacy) -->
+    <!-- ලිපිය 4 -->
     <article class="card">
-      <div class="card-thumb c2">
+      <div class="card-thumb c4">
         <span class="card-tag">අසාමාන්‍ය</span>🎨
         <button class="card-share" data-card-share aria-label="Share">↗</button>
       </div>
@@ -394,9 +406,9 @@ img{max-width:100%;display:block}
       </div>
     </article>
 
-    <!-- ලිපිය 3: හයිපර්තයිමීසියා (Hyperthymesia) -->
+    <!-- ලිපිය 5 -->
     <article class="card">
-      <div class="card-thumb c3">
+      <div class="card-thumb c5">
         <span class="card-tag">මනස</span>🧠
         <button class="card-share" data-card-share aria-label="Share">↗</button>
       </div>
@@ -407,31 +419,66 @@ img{max-width:100%;display:block}
       </div>
     </article>
 
-    <!-- ================= අලුත් ලිපි අවසානය ================= -->
-
+    <!-- ලිපිය 6 -->
     <article class="card">
-      <div class="card-thumb c1"><span class="card-tag">විද්‍යාව</span>🌀</div>
+      <div class="card-thumb c6">
+        <span class="card-tag">විද්‍යාව</span>🌀
+        <button class="card-share" data-card-share aria-label="Share">↗</button>
+      </div>
       <div class="card-body">
-       <h3><a href="quantum.html">Quantum Entanglement: එකවර ස්ථාන දෙකක තියෙන්නේ කොහොමද?</a></h3>
+        <h3><a href="quantum.html">Quantum Entanglement: එකවර ස්ථාන දෙකක තියෙන්නේ කොහොමද?</a></h3>
         <p class="card-excerpt">අංශු දෙකක් එකිනෙකට ඈතින් තිබුණත්, එකක් වෙනස් කළොත් අනිත් එකට බලපානවා. ඒ ඇයි?</p>
+        <div class="card-meta"><span>අරුම පුදුම ලෝකය</span><span class="dot">•</span><span>8 min</span></div>
       </div>
     </article>
 
+    <!-- ලිපිය 7 -->
     <article class="card">
-      <div class="card-thumb c2"><span class="card-tag">මනස</span>🧠</div>
+      <div class="card-thumb c7">
+        <span class="card-tag">මනස</span>🌀
+        <button class="card-share" data-card-share aria-label="Share">↗</button>
+      </div>
       <div class="card-body">
         <h3><a href="dejavu.html">Déjà vu: "මේක කලින් දැකලා" කියලා හිතෙන්නේ ඇයි?</a></h3>
         <p class="card-excerpt">ඔබට කවදා හරි තැනකට ආවාම "මෙතනට ඇවිත් ඉන්නවා වගේ" දැනුණාද? ඒ මොකක්ද?</p>
+        <div class="card-meta"><span>අරුම පුදුම ලෝකය</span><span class="dot">•</span><span>6 min</span></div>
       </div>
     </article>
 
-   
+    <!-- ලිපිය 8 -->
+    <article class="card">
+      <div class="card-thumb c8">
+        <span class="card-tag">දර්ශනය</span>🤔
+        <button class="card-share" data-card-share aria-label="Share">↗</button>
+      </div>
+      <div class="card-body">
+        <h3><a href="mandela.html">Mandela Effect: ඇයි හැමෝම එකම වැරදි මතකය තියාගන්නේ?</a></h3>
+        <p class="card-excerpt">මිලියන ගණන් මිනිස්සුන්ට එකම වැරදි මතකයක් තියෙනවා නම්, ඒක මොළයේ ගැටළුවක්ද?</p>
+        <div class="card-meta"><span>අරුම පුදුම ලෝකය</span><span class="dot">•</span><span>7 min</span></div>
+      </div>
+    </article>
 
-<!-- FEATURED -->
+    <!-- ලිපිය 9 -->
+    <article class="card">
+      <div class="card-thumb c9">
+        <span class="card-tag">අසාමාන්‍ය</span>🎨
+        <button class="card-share" data-card-share aria-label="Share">↗</button>
+      </div>
+      <div class="card-body">
+        <h3><a href="synesthesia.html">Synesthesia: ශබ්ද වර්ණ විදිහට දකින මිනිස්සු</a></h3>
+        <p class="card-excerpt">සමහරුන්ට අකුරු දකිනකොට වර්ණ පේනවා. මේක මොළයේ විශේෂ ලක්ෂණයක්.</p>
+        <div class="card-meta"><span>අරුම පුදුම ලෝකය</span><span class="dot">•</span><span>5 min</span></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- FEATURED BANNER -->
 <section class="section">
   <div class="featured">
     <div>
-      <span style="color:var(--accent);font-size:.85rem;font-weight:700;letter-spacing:1px">VÍŠEṢA LĪPIYA</span>
+      <span style="color:var(--accent);font-size:.85rem;font-weight:700;letter-spacing:1px">විශේෂ ලිපිය</span>
       <h2>අනන්තය (Infinity) — ගණිතයේ විශ්මය</h2>
       <p>අනන්තය කියන්නේ අංකයක්ද? එහෙනම් අනන්තයට 1ක් එකතු කළොත් මොකද වෙන්නේ? ගණිතඥයින් 2000 වසරක් තිස්සේ මේ ගැන විවාද කරනවා.</p>
       <a href="infinity.html" class="btn btn-primary">කියවන්න →</a>
@@ -492,7 +539,7 @@ img{max-width:100%;display:block}
 </footer>
 
 <script>
-  // Mobile menu
+  // Mobile menu toggle
   document.querySelector('.menu-btn').addEventListener('click', ()=>{
     const links = document.querySelector('.nav-links');
     if(links.style.display === 'flex'){
@@ -509,6 +556,18 @@ img{max-width:100%;display:block}
       links.style.gap = '16px';
       links.style.borderBottom = '1px solid var(--line)';
     }
+  });
+
+  // Card Share logic (WhatsApp)
+  document.querySelectorAll('[data-card-share]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault(); e.stopPropagation();
+      const card = btn.closest('.card');
+      if(!card) return;
+      const title = card.querySelector('h3').innerText;
+      const url = card.querySelector('h3 a').href;
+      window.open(`https://wa.me/?text=${encodeURIComponent(title)}%0A%0A${encodeURIComponent(url)}`, '_blank', 'width=600,height=600');
+    });
   });
 </script>
 </body>
