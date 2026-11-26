@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gihanshanth-ux.github.io/aruma-puduma-lokaya/sitemap.xml
