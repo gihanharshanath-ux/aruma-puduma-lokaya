@@ -62,6 +62,23 @@ img{max-width:100%; display:block; height:auto}
   background:linear-gradient(to top, rgba(15,11,31,0.95), transparent);
   font-size:.85rem; color:var(--muted);
 }
+  /* ආපසු යාමේ බොත්තම් සඳහා */
+.back-nav {
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.back-nav a {
+  color: var(--accent);
+  transition: color 0.2s;
+}
+.back-nav a:hover {
+  color: #fff;
+}
+.back-nav .separator {
+  color: var(--muted);
+  margin: 0 10px;
+}
 .article-tag{
   display:inline-block; padding:6px 14px; border-radius:999px;
   background:rgba(245,182,66,.15); color:var(--accent);
@@ -179,7 +196,12 @@ img{max-width:100%; display:block; height:auto}
 </header>
 
 <main class="article-wrap">
-
+  <!-- ආපසු යාමේ බොත්තම් -->
+  <div class="back-nav">
+    <a href="index.html">← මුල් පිටුවට</a>
+    <span class="separator">|</span>
+    <a href="all-articles.html">සියලුම ලිපි</a>
+  </div>
   <figure class="article-hero">
     <img src="https://picsum.photos/seed/dejavu/1200/675" alt="Déjà vu අත්දැකීම">
     <figcaption class="hero-caption">ඔබට කවදා හරි මේ තැනට ඇවිත් ඉන්නවා වගේ දැනුණාද?</figcaption>
