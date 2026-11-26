@@ -71,6 +71,23 @@ img{max-width:100%; display:block; height:auto}
   .nav-links{display:none;} .menu-btn{display:block;} .article-wrap{padding:20px 16px 40px;}
   .share-bar{flex-direction:column; align-items:stretch; text-align:center;} .share-buttons{justify-content:center;}
   .share-btn{flex:1; justify-content:center;}
+  /* ආපසු යාමේ බොත්තම් සඳහා */
+.back-nav {
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.back-nav a {
+  color: var(--accent);
+  transition: color 0.2s;
+}
+.back-nav a:hover {
+  color: #fff;
+}
+.back-nav .separator {
+  color: var(--muted);
+  margin: 0 10px;
+}
 }
 </style>
 </head>
@@ -83,6 +100,12 @@ img{max-width:100%; display:block; height:auto}
   </nav>
 </header>
 <main class="article-wrap">
+    <!-- ආපසු යාමේ බොත්තම් -->
+  <div class="back-nav">
+    <a href="index.html">← මුල් පිටුවට</a>
+    <span class="separator">|</span>
+    <a href="all-articles.html">සියලුම ලිපි</a>
+  </div>
   <figure class="article-hero">
     <img src="https://picsum.photos/seed/hyper/1200/675" alt="Hyperthymesia මතකය">
     <figcaption class="hero-caption">අතීතයේ හැම දවසක්ම මතක තියාගන්න පුළුවන් නම්, ඒක වරමක්ද? ශාපයක්ද?</figcaption>
